@@ -2,7 +2,7 @@ import os
 from datetime import date
 ## init해 놓은 폴더로 이동
 ## 수정
-path = os.path.realpath(__file__).split('github_push')[0]
+path = os.path.realpath(__file__).split('github')[0]
 
 os.chdir(path)
 
