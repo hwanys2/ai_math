@@ -10,10 +10,3 @@ print(os.path)
 output = os.popen('git pull origin main').read()
 print(output)
 
-
-
-
-# output = os.popen("git commit -m 'auto{}'".format(date.today())).read()
-# print(output)
-# output = os.popen('git push origin main').read()
-# print(output)
