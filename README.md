@@ -9,6 +9,3 @@ github_push.py를 실행하면 commit 메세지를 ID push날짜 형태로 나�
 2. 이후 사용할 때 vscode 에서 github_pull.py 로 최신상태로 내려받는다.
 3. 각자 코드를 작성한다
 4. github_push.py를 실행하여 올린다.
-
-
-수정합니다.
