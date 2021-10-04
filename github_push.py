@@ -15,4 +15,3 @@ output = os.popen('git commit -m "{}  {}"'.format(user_name, date.today())).read
 print(output)
 output = os.popen('git push origin main').read()
 print(output)
-###
