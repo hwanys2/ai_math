@@ -3,7 +3,7 @@ import wave
 
 CHUNK = 1024
 
-path = '/Users/macbook-air/Desktop/coding/인공지능수학수업/output.wav'
+path = '\Users\User\Desktop\python folder\output.wav'
 
 with wave.open(path, 'rb') as f:
     p = pyaudio.PyAudio()
