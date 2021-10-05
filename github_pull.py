@@ -1,5 +1,4 @@
 import os
-from datetime import date
 
 path = os.path.realpath(__file__).split('github')[0]
 
