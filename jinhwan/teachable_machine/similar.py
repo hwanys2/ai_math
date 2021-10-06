@@ -1,7 +1,5 @@
 # from keras.models import load_model
 import tensorflow as tf 
-
-
 from PIL import Image, ImageOps
 import numpy as np
 
