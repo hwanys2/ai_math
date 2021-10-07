@@ -1,0 +1,31 @@
+import speech_recognition as sr
+from selenium import webdriver
+import time
+options = webdriver.ChromeOptions()
+options.add_argument("--use-fake-ui-for-media-stream")
+
+r =  sr.Recognizer()
+
+def voicetotext():
+    with sr.Microphone() as source:
+
+        print('Speak Anything : ')
+        audio = r.listen(source)
+
+        try:
+            text = r.recognize_google(audio, language='ko-KR')
+            print('You said : {}'.format(text))
+        except:
+            text = 'error'
+            print('Sorry could not recognize your voice')
+    return text
+voicetotext()
+
+my_voice = voicetotext()
+url = 'https://www.youtube.com/results?search_query={0}'.format(my_voice + "듣는노래")
+chromedriver = r'd:\\python\\chromedriver.exe'
+driver = webdriver.Chrome(chromedriver)
+driver.get(url)
+
+loca = driver.find_element_by_class_name('style-scope yt-img-shadow')
+loca.click()
