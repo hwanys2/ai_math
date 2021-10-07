@@ -5,9 +5,10 @@ name = df['이름']
 
 number = list(number)
 name = list(name)
-good = []
+a ={}
 for i in range(40):
-    good.append({number[i] : name[i]})
-print(good)
+    a[i]= {number[i] : name[i]}
+    a.update(a[i])
+print(a)
 
-print(good[5])
+print(a[10103])
