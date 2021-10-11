@@ -26,4 +26,8 @@ data[0] = normalized_image_array
 
 # run the inference
 prediction = model.predict(data)
-print(prediction)
+print(prediction[0].argmax())
+
+
+##할일 몇 번째가 높은지, 그리고 이름이 뭔지
+# argmax 가장큰 수의 인덱스명 출력
