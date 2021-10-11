@@ -12,7 +12,13 @@ model = tf.keras.models.load_model('jinhwan/teachable_machine/conference_file/ke
 # determined by the first position in the shape tuple, in this case 1.
 data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 # Replace this with the path to your image
+
+# 1. 파일을 가져올수도있고
+# 2. 캠을 이용할 수도 있고.
+# 특정 사이트의 링크에 있
 image = Image.open('jinhwan/teachable_machine/conference_file/test.jpg')
+
+
 #resize the image to a 224x224 with the same strategy as in TM2:
 #resizing the image to be at least 224x224 and then cropping from the center
 size = (224, 224)

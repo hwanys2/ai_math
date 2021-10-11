@@ -1,7 +1,5 @@
 with open('jinhwan/teachable_machine/conference_file/labels.txt', 'r') as f:
     labels = f.readlines()
-print(labels)
-print(type(labels))
 
 label_dict = {}
 for label in labels:
