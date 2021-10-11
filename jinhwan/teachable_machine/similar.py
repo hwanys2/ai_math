@@ -4,7 +4,7 @@ from PIL import Image, ImageOps
 import numpy as np
 
 # Load the model
-model = tf.keras.models.load_model('/Users/macbook-air/Desktop/ai_math/jinhwan/teachable_machine/keras_model.h5')
+model = tf.keras.models.load_model('jinhwan/teachable_machine/keras_model.h5')
 # model = load_model('keras_model.h5')
 
 # Create the array of the right shape to feed into the keras model
