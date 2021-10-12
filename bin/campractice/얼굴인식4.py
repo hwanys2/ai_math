@@ -9,8 +9,7 @@ faceCascade = cv2.CascadeClassifier(cascadePath);
 font = cv2.FONT_HERSHEY_SIMPLEX
 
 #iniciate id counter
-id = 0
-
+id=0
 # names related to ids: example ==> loze: id=1,  etc
 # 이런식으로 사용자의 이름을 사용자 수만큼 추가해준다.
 names = ['bin','sim']
@@ -50,12 +49,12 @@ while True:
         cv2.putText(img, str(id), (x+5,y-5), font, 1, (255,255,255), 2)
         cv2.putText(img, str(confidence), (x+5,y+h-5), font, 1, (255,255,0), 1)  
     
-    cv2.imshow('camera',img) 
-    k = cv2.waitKey(10) & 0xff # Press 'ESC' for exiting video
-    if k == 27:
-        break
-# Do a bit of cleanup
-print("\n [INFO] Exiting Program and cleanup stuff")
-cam.release()
-cv2.destroyAllWindows()
+#     cv2.imshow('camera',img) 
+#     k = cv2.waitKey(10) & 0xff # Press 'ESC' for exiting video
+#     if k == 27:
+#         break
+# # Do a bit of cleanup
+# print("\n [INFO] Exiting Program and cleanup stuff")
+# cam.release()
+# cv2.destroyAllWindows()
 
