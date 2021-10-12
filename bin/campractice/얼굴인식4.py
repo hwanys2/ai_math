@@ -9,10 +9,10 @@ faceCascade = cv2.CascadeClassifier(cascadePath);
 font = cv2.FONT_HERSHEY_SIMPLEX
 
 #iniciate id counter
-id=0
+id=1
 # names related to ids: example ==> loze: id=1,  etc
 # 이런식으로 사용자의 이름을 사용자 수만큼 추가해준다.
-names = ['bin','sim']
+names = ['bini','sim']
 
 # Initialize and start realtime video capture
 cam = cv2.VideoCapture(0)
@@ -40,7 +40,6 @@ while True:
         id, confidence = recognizer.predict(gray[y:y+h,x:x+w])
         # Check if confidence is less them 100 ==> "0" is perfect match
         if (confidence < 100):
-            print("### id :" +str(id))
             id = names[id]
             confidence = "  {0}%".format(round(100 - confidence))
         else:
