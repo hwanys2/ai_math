@@ -21,7 +21,7 @@ while(True):
         cv2.rectangle(img, (x,y), (x+w,y+h), (255,0,0), 2)     
         count += 1
         # Save the captured image into the datasets folder
-        cv2.imwrite("bin/campractice/dateset/" + str(face_id) + '.'+ "0" +"." + str(count) + ".jpg", gray[y:y+h,x:x+w])
+        cv2.imwrite("bin/campractice/dateset/" + str(face_id) + '.'+ "2" +"." + str(count) + ".jpg", gray[y:y+h,x:x+w]) # 단 매번 저 가운데 숫자를 바꿔야하는 단점이...
         cv2.imshow('image', img)
     k = cv2.waitKey(100) & 0xff # Press 'ESC' for exiting video
     if k == 27:
