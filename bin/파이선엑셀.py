@@ -9,7 +9,8 @@ for i in range(1,9):
         for j in range(1,len(df['번호'])):
             sheet_name[j] = {number[j] : name[j]}
             sheet_name.update(sheet_name[j])
-print(sheet_name[1308])
+ai = int(input("학반번호를 적어주세요"))
+print(sheet_name[ai])
 
 # 연습 및 시패
 # import pandas as pd

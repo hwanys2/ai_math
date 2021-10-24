@@ -12,7 +12,7 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 id=3
 # names related to ids: example ==> loze: id=1,  etc
 # 이런식으로 사용자의 이름을 사용자 수만큼 추가해준다.
-names = ['bini','koo','kii']
+names = ['bini','koo','kii',]
 
 # Initialize and start realtime video capture
 cam = cv2.VideoCapture(0)
