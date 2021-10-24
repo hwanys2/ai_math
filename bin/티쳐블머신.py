@@ -16,7 +16,7 @@ data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 # 1. 파일을 가져올수도있고
 # 2. 캠을 이용할 수도 있고.
 # 특정 사이트의 링크에 있
-image = Image.open('jinhwan/teachable_machine/conference_file/test.jpg')
+image = Image.open('bin/campractice/dateset/bin.0.2.jpg')
 
 
 #resize the image to a 224x224 with the same strategy as in TM2:

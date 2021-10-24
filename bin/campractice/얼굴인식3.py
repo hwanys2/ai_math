@@ -17,6 +17,7 @@ def getImagesAndLabels(path):
         PIL_img = Image.open(imagePath).convert('L') # convert it to grayscale
         img_numpy = np.array(PIL_img,'uint8')
         id = int(os.path.split(imagePath)[-1].split(".")[1])
+        print(id)
         faces = detector.detectMultiScale(img_numpy)
         for (x,y,w,h) in faces:
             faceSamples.append(img_numpy[y:y+h,x:x+w])
@@ -25,7 +26,6 @@ def getImagesAndLabels(path):
 print ("\n [INFO] Training faces. It will take a few seconds. Wait ...")
 faces,ids = getImagesAndLabels(path)
 recognizer.train(faces, np.array(ids))
-print(ids)
 # Save the model into trainer/trainer.yml
 recognizer.write('bin/campractice/trainer/trainer.yml') # recognizer.save() worked on Mac, but not on Pi
 # Print the numer of faces trained and end program
