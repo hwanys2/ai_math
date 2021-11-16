@@ -1,7 +1,7 @@
 # nba 오늘의 경기 가져오기
 import requests
 from bs4 import BeautifulSoup
-
+import re
 
 url = "https://sports.news.naver.com/basketball/index"
 
@@ -11,9 +11,26 @@ bs_html = BeautifulSoup(html.content,"html.parser")
 naver_logo = bs_html.find("div",{"id":"_tab_box_nba"})
 
 nba = naver_logo.text 
+nba_a = re.sub(r'[(기록|영상|응원)|\n|\t]', "", nba)
+nba_a = re.sub(r'(종료)', '\n', nba_a)
+# nba_a = re.sub(r'\d+', r'\g<0>\t',nba_a)\
+nba_a = re.sub('(\\d+)(\\D+)(\\d+)(\\D+)','\\1\t\\2\t\\3\t\\4',nba_a)
+new_msg = "nba 정보입니다.\n"
+for line in nba_a.split('\n'):
+    score_team = line.split('\t')
+    for i, a in enumerate(score_team):
+        if i % 2 == 0:
+            new_msg += a.ljust(5, " ")
+        else :
+            count_num = len(a)
+            new_msg += a + " "*(7-count_num)*2
+    new_msg += '\n'
+print(new_msg)
 
-nba_a = nba.strip().replace("\n", "").replace("\t", "").replace("종료", "\n").replace("응원", "\n").replace('기록영상',"")
-print(nba_a)
+
+
+
+# print(nba_a)
 # result = list(nba)
 # while '\n' in result:
 #     result.remove('\n')
