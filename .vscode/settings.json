@@ -1,7 +1,11 @@
 {
+<<<<<<< HEAD
     "python.pythonPath": "C:\\ProgramData\\Anaconda3\\python.exe",
     "terminal.integrated.shellArgs.windows": ["/K", "C:\\ProgramData\\Anaconda3\\Scripts\\activate.bat C:\\Users\\jack\\Anaconda3 & conda activate math"]
     ,
     "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
     "editor.codeActionsOnSave": null
+=======
+    "activestate.promptRuntimeCreation": false
+>>>>>>> 94d3b17701d5d1b9fcb43c8cc39c9f70994ed33e
 }

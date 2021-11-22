@@ -1,13 +1,26 @@
-corona = {}
-corona[1] = {'locate' : '전남대', 'date' : '2021-10-04'}
-corona[2] = {'locate' : '광주고', 'date' : '2021-10-03'}
+from konlpy.tag import Okt
+import re  
+okt = Okt()  
 
+# 정규 표현식을 통해 온점을 제거하는 정제 작업.  
+token = re.sub("(\.)","","정부가 발표하는 물가상승률과 소비자가 느끼는 물가상승률은 다르다.")  
 
-print(corona[1]['date'])
+# OKT 형태소 분석기를 통해 토큰화 작업을 수행한 뒤에, token에다가 넣음.  
+token = okt.morphs(token)  
 
-fruit = {'사과' : 'apple', '바나나': 'banana'}
-print(fruit['사과'])
-url = 'https://www.google.com/maps/place/%EA%B4%91%EC%A3%BC%EA%B4%91%EC%97%AD%EC%8B%9C+%EC%84%9C%EA%B5%AC+%EC%8C%8D%EC%B4%8C%EB%8F%99+%EC%83%81%EC%9D%BC%EB%A1%9C54%EB%B2%88%EA%B8%B8+9-3/@35.1603546,126.8620776,17z/data=!3m1!4b1!4m5!3m4!1s0x35718eab34597159:0x26e11e41f3b3960b!8m2!3d35.1603546!4d126.8642663?hl=ko'
-print(float(url.split('@')[1].split(',')[0]))
-print(float(url.split('@')[1].split(',')[1]))
-# user_name = os.popen('git config --list ').read().split('user.name=')[1].split('\n')[0]
+word2index = {}  
+bow = []  
+for voca in token:  
+# token을 읽으면서, word2index에 없는 (not in) 단어는 새로 추가하고, 이미 있는 단어는 넘깁니다.   
+         if voca not in word2index.keys():  
+             word2index[voca] = len(word2index)  
+             # BoW 전체에 전부 기본값 1을 넣는다.
+             bow.insert(len(word2index)-1,1)
+         else:
+            # 재등장하는 단어의 인덱스
+            index = word2index.get(voca)
+
+            # 재등장한 단어는 해당하는 인덱스의 위치에 1을 더한다.
+            bow[index] = bow[index]+1
+
+print(word2index)  
