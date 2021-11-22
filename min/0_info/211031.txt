@@ -1,0 +1,18 @@
+진환샘
+https://proximal-stranger-fa0.notion.site/2b85ceff1f744e55b30dc8a0187a46e3
+위키
+https://wikidocs.net/book/2155
+- jupyter notebook
+
+
+NLTK - 자연어 처리를 위한 파이썬 패키지 / pip install nltk
+NLTK Data - 데이터 / nltk.download()
+KoNLPy 코엔엘파이 - 한국어 처리를 위한 형태소 분석기 패키지 / pip install konlpy
+JPype - Java와 Python을 연결해주는 역할 JPype
+ pip install JPype1-0.6.3-cp36m-win_amd64.whl
+ pip install JPype1-1.2.0-cp36-cp36m-win_amd64.whl
+Pandas - 파이썬 데이터 처리 라이브러리 / pip install pandas
+Numpy - 수치 데이터를 다루는 파이선 패키지 / pip install numpy
+Matplotlib - 데이터를 차트나 플롯으로 시각화
+Pandas-Profiling 데이터 성격 파악 탐색 패키지
+

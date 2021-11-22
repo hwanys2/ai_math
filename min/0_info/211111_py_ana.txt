@@ -1,0 +1,20 @@
+vs - anaconda 연결
+
+1. command pallet에서 Python Interpreter 실행
+ - [Ctrl + Shift + P] 누른 다음에 Python Interpreter 텍스트 넣고 실행하면 콘다 파이선 선택
+2. Conda 환경 활성화 default
+ - [File-Preference-Setting] [Workspace]에서 검색 terminal.integrated.shellArgs.Windows
+  Edit in settings.json
+    "python.pythonPath": "C:\\ProgramData\\Anaconda3\\python.exe", >> 요건 이미 설정되어있음
+예시 "terminal.integrated.shellArgs.windows": ["/K", "C:\\Users\\<Anaconda가 설치된 위치>\\Scripts\\activate.bat C:\\Users\\Mee\\Anaconda3 & conda activate <사용하고자 하는 conda env 이름>"],
+전기 "terminal.integrated.shellArgs.windows": ["/K", "C:\\ProgramData\\Anaconda3\\Scripts\\activate.bat C:\\Users\\jack\\Anaconda3 & conda activate math"]
+    ,"terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe"
+
+
+참고 URL : https://optilog.tistory.com/12
+
+
+error : &은(는) 예상되지 않았습니다.
+->1안 : C:\Windows\System32\reg.exe DELETE "HKCU\Software\Microsoft\Command Processor" /v AutoRun /f
+->2안 : cntrl+ shfit + p 후에 shell 검색 default shell을 command prompt로 변경
+
